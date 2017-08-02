@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-declare module "react-mdl/extra/material.js" {
+declare module 'react-mdl/extra/material.js' {
   declare var exports: {};
 }
 
-declare module "react-mdl" {
+declare module 'react-mdl' {
   declare var exports: {
     Button: React.Element,
     Dialog: React.Element,

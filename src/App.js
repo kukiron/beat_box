@@ -1,10 +1,10 @@
 /* @flow */
 
-import type { Track, EncodedTrack } from "./types";
+import type { Track, EncodedTrack } from './types';
 
-import Tone from "tone";
+import Tone from 'tone';
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Button,
   Dialog,
@@ -15,15 +15,15 @@ import {
   Icon,
   Slider,
   Switch,
-} from "react-mdl";
+} from 'react-mdl';
 
-import "./App.css";
-import "react-mdl/extra/css/material.light_blue-pink.min.css";
-import "react-mdl/extra/material.js";
+import './App.css';
+import 'react-mdl/extra/css/material.light_blue-pink.min.css';
+import 'react-mdl/extra/material.js';
 
-import * as sequencer from "./sequencer";
-import * as model from "./model";
-import samples from "./samples.json";
+import * as sequencer from './sequencer';
+import * as model from './model';
+import samples from './samples.json';
 
 
 class SampleSelector extends Component {
