@@ -1,8 +1,8 @@
 {
   "name": "beat_box",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "http://github.com/kukiron",
+  "version": "1.0.0",
+  "description": "Fun drums looper/sequencer with WebAudio API",
+  "main": "index.js",
   "scripts": {
     "deploy": "npm run build && gh-pages -d build",
     "start": "react-scripts start",
@@ -10,6 +10,13 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kukiron/beat_box.git"
+  },
+  "author": "Kafil Uddin Kiron",
+  "license": "ISC",
+  "homepage": "http://github.com/kukiron/beat_box",
   "dependencies": {
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
