@@ -10,3 +10,4 @@ Checkout this repo & try the beat_box. You'll need node and npm installed. Downl
 $ npm install
 $ npm start
 ```
+ENJOY!
