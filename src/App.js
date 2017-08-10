@@ -211,7 +211,7 @@ class App extends Component {
     }
   }
 
-  initializeState(state: {bpm?: number, tracks: Track[]}) {
+  initializeState(state: { bpm?: number, tracks: Track[] }) {
     this.state = {
       bpm: 120,
       playing: false,
