@@ -1,5 +1,5 @@
 # beat_box
-[![CircleCI](https://circleci.com/gh/kukiron/beat_box.svg?style=svg)](https://circleci.com/gh/kukiron/beat_box) [![Build Status](https://travis-ci.org/kukiron/beat_box.svg?branch=master)](https://travis-ci.org/kukiron/beat_box)
+[![CircleCI](https://circleci.com/gh/kukiron/beat_box.svg?style=svg)](https://circleci.com/gh/kukiron/beat_box) [![Build Status](https://travis-ci.org/kukiron/beat_box.svg?branch=master)](https://travis-ci.org/kukiron/beat_box) [![Code Climate](https://codeclimate.com/github/kukiron/beat_box/badges/gpa.svg)](https://codeclimate.com/github/kukiron/beat_box)
 
 This is an experiment. Might be renamed later at some point, depending on what it becomes.
 
