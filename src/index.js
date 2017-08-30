@@ -10,8 +10,6 @@ const sentry_url = `https://${sentry_key}@sentry.io/${sentry_app}`;
 
 Raven.config(sentry_url).install();
 
-Raven.showReportDialog();
-
 ReactDOM.render(
   <App />,
   document.getElementById('root')
