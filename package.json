@@ -16,7 +16,7 @@
   },
   "author": "Kafil Uddin Kiron",
   "license": "ISC",
-  "homepage": "http://github.com/kukiron/beat_box",
+  "homepage": "https://beatbox-k.herokuapp.com",
   "dependencies": {
     "raven-js": "^3.17.0",
     "react": "^15.3.2",
