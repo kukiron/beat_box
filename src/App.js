@@ -7,9 +7,9 @@ import TrackListView from './components/TrackListView';
 import ShareDialog from './components/ShareDialog';
 import Controls from './components/Controls';
 
-import type { Track, EncodedTrack } from './types';
-import * as sequencer from './sequencer';
-import * as model from './model';
+import type { Track, EncodedTrack } from './lib/types';
+import * as sequencer from './lib/sequencer';
+import * as model from './lib/model';
 
 import './App.css';
 import 'react-mdl/extra/css/material.light_blue-pink.min.css';
@@ -31,7 +31,7 @@ class App extends Component {
     const hash = location.hash.substr(1);
     if (hash.length > 0) {
       try {
-        const {bpm, tracks}: {
+        const { bpm, tracks }: {
           bpm: number,
           tracks: EncodedTrack[],
         } = JSON.parse(atob(hash));
@@ -41,12 +41,12 @@ class App extends Component {
         });
       } catch(e) {
         console.warn("Unable to parse hash", hash, e);
-        this.initializeState({tracks: model.initTracks()});
+        this.initializeState({ tracks: model.initTracks() });
       } finally {
         location.hash = "";
       }
     } else {
-      this.initializeState({tracks: model.initTracks()});
+      this.initializeState({ tracks: model.initTracks() });
     }
   }
 
@@ -63,86 +63,86 @@ class App extends Component {
   }
 
   start = () => {
-    this.setState({playing: true});
+    this.setState({ playing: true });
     this.loop.start();
   };
 
   stop = () => {
     this.loop.stop();
-    this.setState({currentBeat: -1, playing: false});
+    this.setState({ currentBeat: -1, playing: false });
   };
 
   updateCurrentBeat = (beat: number): void => {
-    this.setState({currentBeat: beat});
+    this.setState({ currentBeat: beat });
   };
 
   updateTracks = (newTracks: Track[]) => {
     this.loop = sequencer.update(this.loop, newTracks, this.updateCurrentBeat);
-    this.setState({tracks: newTracks});
+    this.setState({ tracks: newTracks });
   };
 
   addTrack = () => {
-    const {tracks} = this.state;
+    const { tracks } = this.state;
     this.updateTracks(model.addTrack(tracks));
   };
 
   clearTrack = (id: number) => {
-    const {tracks} = this.state;
+    const { tracks } = this.state;
     this.updateTracks(model.clearTrack(tracks, id));
   };
 
   deleteTrack = (id: number) => {
-    const {tracks} = this.state;
+    const { tracks } = this.state;
     this.updateTracks(model.deleteTracks(tracks, id));
   };
 
   toggleTrackBeat = (id: number, beat: number) => {
-    const {tracks} = this.state;
+    const { tracks } = this.state;
     this.updateTracks(model.toggleTrackBeat(tracks, id, beat));
   };
 
   setTrackVolume = (id: number, vol: number) => {
-    const {tracks} = this.state;
+    const { tracks } = this.state;
     this.updateTracks(model.setTrackVolume(tracks, id, vol));
   };
 
   muteTrack = (id: number) => {
-    const {tracks} = this.state;
+    const { tracks } = this.state;
     this.updateTracks(model.muteTrack(tracks, id));
   };
 
   updateBPM = (newBpm: number) => {
     sequencer.updateBPM(newBpm);
-    this.setState({bpm: newBpm});
+    this.setState({ bpm: newBpm });
   };
 
   updateTrackSample = (id: number, sample: string) => {
-    const {tracks} = this.state;
+    const { tracks } = this.state;
     this.updateTracks(model.updateTrackSample(tracks, id, sample));
   };
 
   closeDialog = () => {
-    this.setState({shareHash: null});
+    this.setState({ shareHash: null });
   };
 
   randomSong = () => {
-    const {bpm, tracks} = model.randomSong();
+    const { bpm, tracks } = model.randomSong();
     this.updateTracks(tracks);
     this.updateBPM(bpm);
   };
 
   share = () => {
-    const {bpm, tracks} = this.state;
+    const { bpm, tracks } = this.state;
     const shareHash = btoa(JSON.stringify({
       bpm,
       tracks: model.encodeTracks(tracks),
     }));
-    this.setState({shareHash});
+    this.setState({ shareHash });
   };
 
   render() {
-    const {bpm, currentBeat, playing, shareHash, tracks} = this.state;
-    const {updateBPM, start, stop, addTrack, share, randomSong, closeDialog} = this;
+    const { bpm, currentBeat, playing, shareHash, tracks } = this.state;
+    const { updateBPM, start, stop, addTrack, share, randomSong, closeDialog } = this;
     return (
       <div className="app">
         <h3>Beat_Box</h3>
@@ -152,7 +152,7 @@ class App extends Component {
           <tbody>
             <tr>
               <td colSpan="19">
-                <p style={{textAlign: "right"}}>
+                <p style={{ textAlign: "right" }}>
                   <Button type="button" colored onClick={randomSong}>I am uninspired, get me some random tracks</Button>
                 </p>
               </td>
@@ -168,7 +168,7 @@ class App extends Component {
             randomSong={this.randomSong}
             clearTrack={this.clearTrack}
             deleteTrack={this.deleteTrack} />
-          <Controls {...{bpm, updateBPM, playing, start, stop, addTrack, share}} />
+          <Controls {...{ bpm, updateBPM, playing, start, stop, addTrack, share }} />
         </table>
       </div>
     );

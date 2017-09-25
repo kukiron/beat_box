@@ -1,6 +1,6 @@
 /* @flow */
 import React, { Component } from 'react';
-import samples from '../samples.json';
+import samples from '../lib/samples.json';
 
 class SampleSelector extends Component {
   state: {
@@ -14,11 +14,11 @@ class SampleSelector extends Component {
 
   open = (event) => {
     event.preventDefault();
-    this.setState({open: true});
+    this.setState({ open: true });
   };
 
   close = () => {
-    this.setState({open: false});
+    this.setState({ open: false });
   };
 
   onChange = (event) => {
@@ -28,18 +28,18 @@ class SampleSelector extends Component {
   };
 
   render() {
-    const {current} = this.props;
-    const {open} = this.state;
+    const { current } = this.props;
+    const { open } = this.state;
     if (open) {
       return (
         <select autoFocus value={current} onChange={this.onChange} onBlur={this.close}>{
           samples.map((sample, i) => {
-            return <option key={i}>{sample}</option>;
+            return <option key={i}>{ sample }</option>;
           })
         }</select>
       );
     } else {
-      return <a href="" onClick={this.open}>{current}</a>;
+      return <a href="" onClick={this.open}>{ current }</a>;
     }
   }
 }

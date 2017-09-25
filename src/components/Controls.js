@@ -15,7 +15,7 @@ const Controls = ({
   return (
     <tfoot className="controls">
       <tr>
-        <td style={{textAlign: "right"}}>
+        <td style={{ textAlign: "right" }}>
           <FABButton mini colored onClick={addTrack} title="Add new track">
             <Icon name="add" />
           </FABButton>
