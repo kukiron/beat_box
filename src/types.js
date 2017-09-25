@@ -1,5 +1,4 @@
 /* @flow */
-
 export type BeatNotifier =
   (beat: number) => void;
 

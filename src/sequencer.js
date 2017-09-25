@@ -1,8 +1,6 @@
 /* @flow */
-import type { Track, BeatNotifier } from './types';
-
 import Tone from 'tone';
-
+import type { Track, BeatNotifier } from './types';
 
 const velocities = [
   1, .5, .75, .5,
