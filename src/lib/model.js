@@ -1,4 +1,3 @@
-/* @flow */
 import type { Track, EncodedTrack } from './types';
 import samples from './samples.json';
 

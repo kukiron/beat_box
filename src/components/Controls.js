@@ -1,4 +1,3 @@
-/* @flow */
 import React from 'react';
 import { FABButton, Icon, Slider } from 'react-mdl';
 

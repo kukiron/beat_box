@@ -1,4 +1,3 @@
-/* @flow */
 import React from 'react';
 import { Icon, Slider, Switch } from 'react-mdl';
 import SampleSelector from './SampleSelector';

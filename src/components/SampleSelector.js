@@ -1,4 +1,3 @@
-/* @flow */
 import React, { Component } from 'react';
 import samples from '../lib/samples.json';
 

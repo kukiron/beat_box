@@ -1,4 +1,3 @@
-/* @flow */
 import React, { Component } from 'react';
 import Tone from 'tone';
 import { Button } from 'react-mdl';

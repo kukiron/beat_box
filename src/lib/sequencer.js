@@ -1,4 +1,3 @@
-/* @flow */
 import Tone from 'tone';
 import type { Track, BeatNotifier } from './types';
 
