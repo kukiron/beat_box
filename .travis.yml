@@ -2,18 +2,19 @@ sudo: false
 language: node_js
 notifications:
   email: false
-
 node_js:
-  - "8.4.0"
-
+  - 8.4.0
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm install -g npm@latest
-
+  - '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' # skipped when using node 9
+  - npm install -g greenkeeper-lockfile@1
 install:
   - npm install
-
+before_script: greenkeeper-lockfile-update
 script: npm run build
+after_script: greenkeeper-lockfile-upload
+env:
+  global:
+    secure: MWGDZY+zVBMv3qR4K06KwTsfoYYK1KO2BPl1dIpTRf2TQ3v1PlCMSzs5gtM6rCCzRMIRR4jWH3SR9oXM9krb1WGz/Cam5N8QHBHWx/tRygT3B/uAtyqggBFiyoOGttn7D6NLDO7JLtPJSj/LWhH12Lq23RH2by9lVDqNMjpRRSyiyZtPdf3EqHBE02aCajZVV6DDtM9mFxuUMyP9sK8wud1A2PgVrUfCiar9V7uKTvDWQb2G/KsFMmD8DLIy63XCfLepqJTMYWgGlcZyzsNDeTJmylf/PLo67Isk+p7khmxktYxBKLrMkSz61kLApJaFnC1d/m3K8NTNxNb5cbsegkt93OL2vg0tvHAgcPCOG0OT27JH5O3IsBbgjBkxRicCloE9MmiObB9f/E+PyG2EWfCcur83Pq00wjt2Q9aA5Ls+KFC1h4Y+WjEgDicuKstf0UV8RpeqxF4IE0aADcpcIanEMTtaVFFP2Wn6e0UkvNw6B2PH9n+NfnfHfOxqIQNDDGWJ4bP20mZ4m6DANQQ1IMKVpIay+9nULbDUc+H/QY4joGLUYPYv/An0Bsxau4QmSm7ZTSW1ND70ZVxzfz+dPg+g6NhFnGvxelFw1U7jI9I1A3uTVgH3Qe0cf3ZSltUe7u55Qd9FhtyDkaOEkeUb47c4wkcJSQvE5kRnqaOagOk=
