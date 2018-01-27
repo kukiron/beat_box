@@ -19,13 +19,13 @@
   "homepage": "https://beatbox-k.herokuapp.com",
   "dependencies": {
     "raven-js": "^3.17.0",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-mdl": "^1.7.2",
-    "tone": "^0.8.0"
+    "tone": "^0.11.11"
   },
   "devDependencies": {
-    "gh-pages": "^0.11.0",
-    "react-scripts": "0.7.0"
+    "gh-pages": "^1.1.0",
+    "react-scripts": "1.1.0"
   }
 }
