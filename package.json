@@ -4,11 +4,14 @@
   "description": "Fun drums looper/sequencer with WebAudio API",
   "main": "index.js",
   "scripts": {
+    "clear": "rm -rf ./build",
     "deploy": "npm run build && gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run clear && react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint . --ext .js, .jsx",
+    "lint:fix": "eslint --fix . --ext .js, .jsx"
   },
   "repository": {
     "type": "git",
@@ -18,7 +21,10 @@
   "license": "ISC",
   "homepage": "https://beatbox-k.herokuapp.com",
   "greenkeeper": {
-    "ignore": ["package-names", "you-want-me-to-ignore"]
+    "ignore": [
+      "package-names",
+      "you-want-me-to-ignore"
+    ]
   },
   "dependencies": {
     "raven-js": "^3.17.0",
@@ -28,6 +34,7 @@
     "tone": "^0.8.0"
   },
   "devDependencies": {
+    "eslint-config-latest": "^1.0.6",
     "gh-pages": "^0.11.0",
     "react-scripts": "0.7.0"
   }
