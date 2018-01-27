@@ -1,21 +1,27 @@
+sudo: false
+
 env:
   global:
-    secure: MWGDZY+zVBMv3qR4K06KwTsfoYYK1KO2BPl1dIpTRf2TQ3v1PlCMSzs5gtM6rCCzRMIRR4jWH3SR9oXM9krb1WGz/Cam5N8QHBHWx/tRygT3B/uAtyqggBFiyoOGttn7D6NLDO7JLtPJSj/LWhH12Lq23RH2by9lVDqNMjpRRSyiyZtPdf3EqHBE02aCajZVV6DDtM9mFxuUMyP9sK8wud1A2PgVrUfCiar9V7uKTvDWQb2G/KsFMmD8DLIy63XCfLepqJTMYWgGlcZyzsNDeTJmylf/PLo67Isk+p7khmxktYxBKLrMkSz61kLApJaFnC1d/m3K8NTNxNb5cbsegkt93OL2vg0tvHAgcPCOG0OT27JH5O3IsBbgjBkxRicCloE9MmiObB9f/E+PyG2EWfCcur83Pq00wjt2Q9aA5Ls+KFC1h4Y+WjEgDicuKstf0UV8RpeqxF4IE0aADcpcIanEMTtaVFFP2Wn6e0UkvNw6B2PH9n+NfnfHfOxqIQNDDGWJ4bP20mZ4m6DANQQ1IMKVpIay+9nULbDUc+H/QY4joGLUYPYv/An0Bsxau4QmSm7ZTSW1ND70ZVxzfz+dPg+g6NhFnGvxelFw1U7jI9I1A3uTVgH3Qe0cf3ZSltUe7u55Qd9FhtyDkaOEkeUb47c4wkcJSQvE5kRnqaOagOk=
+    secure: QQBu83i5COLcP3XD5a4tU+t7wvaBFOhakBcN/MeYWSP7qCD33GHD4ubYriDxRNmY9UfEUWmXFiitB6ERGrisGmQhj2cDg81/0bIPk/JBa778ngSGLfzQfEjJ3Y/4zGfuqfco5X9RJami2sYdPiQGe870eIJ6RSO6RWwoJkFnEuIBLeEyumIZO6VhTGt6O0c0kjaLdvvKFliVSeDIusIuifqGuZfFlGs6ZfYhlEx+16TXDtvQ0M1EkjHuVpb7AE1GMrHgqZfmCuv4dvyMsLSRhFvM/HqqOaaUo5m9ND2L+TJo6pCXPOsRNDq9Y9c6HxmhIg2CJ5VoFiGoWVxiYP6hfZu6IoomOF0KO1e4Uo+kJamKCV9KMHPuBACkDfs9dzsRRDJVuLIbDdgkg8NTKGkWKqYMyLFWxY49bjx/Z6smhtf5Vu1dze9ruZMAgzldDFLbQdRdbbGAylCsDNBXd1zehGvPhHMT702dmtFgnEL9EVMYWRhjreFxux6Mpt8puhAMoI9SDh9fJitgU3my0UvUtrH4aDk2XKmi+XjUBRcuze/ERNYdCajQUp4fOeffpKRHhMP9N3JLEZ2s2V1YGFZdtdkNX7WAvRhdYWWGq6ToZEz2CkRIzN601V1HFD3tJOIjpZaI58ygihEgqXaXeemEwpjSU87lQEMpHZFHchhcVIs=
 
-sudo: false
 language: node_js
+
 notifications:
   email: false
+
 node_js:
   - 8.4.0
+
 cache:
   directories:
   - node_modules
+
 before_install:
-  - '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' # skipped when using node 9
+  - "[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest"
   - npm install -g greenkeeper-lockfile@1
 install:
   - npm install
+
 before_script: greenkeeper-lockfile-update
 script: npm run build
 after_script: greenkeeper-lockfile-upload
