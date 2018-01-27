@@ -1,5 +1,5 @@
-import React from 'react';
-import { FABButton, Icon, Slider } from 'react-mdl';
+import React from "react"
+import { FABButton, Icon, Slider } from "react-mdl"
 
 const Controls = ({
   bpm,
@@ -10,7 +10,8 @@ const Controls = ({
   addTrack,
   share
 }) => {
-  const onChange = event => updateBPM(parseInt(event.target.value, 10));
+  const onChange = event => updateBPM(parseInt(event.target.value, 10))
+
   return (
     <tfoot className="controls">
       <tr>
@@ -38,7 +39,7 @@ const Controls = ({
         </td>
       </tr>
     </tfoot>
-  );
+  )
 }
 
-export default Controls;
+export default Controls

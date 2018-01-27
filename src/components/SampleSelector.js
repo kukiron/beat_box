@@ -1,46 +1,52 @@
-import React, { Component } from 'react';
-import samples from '../lib/samples.json';
+import React, { Component } from "react"
+
+import samples from "../lib/samples.json"
 
 class SampleSelector extends Component {
-  state: {
-    open: boolean,
-  };
-
   constructor(props) {
-    super(props);
-    this.state = {open: false};
+    super(props)
+    this.state = { open: false }
   }
 
-  open = (event) => {
-    event.preventDefault();
-    this.setState({ open: true });
-  };
+  open = event => {
+    event.preventDefault()
+    this.setState({ open: true })
+  }
 
   close = () => {
-    this.setState({ open: false });
-  };
+    this.setState({ open: false })
+  }
 
-  onChange = (event) => {
-    const {id, onChange} = this.props;
-    onChange(id, event.target.value);
-    this.close();
-  };
+  onChange = event => {
+    const { id, onChange } = this.props
+    onChange(id, event.target.value)
+    this.close()
+  }
 
   render() {
-    const { current } = this.props;
-    const { open } = this.state;
+    const { current } = this.props
+    const { open } = this.state
     if (open) {
       return (
-        <select autoFocus value={current} onChange={this.onChange} onBlur={this.close}>{
-          samples.map((sample, i) => {
-            return <option key={i}>{ sample }</option>;
-          })
-        }</select>
-      );
+        <select
+          autoFocus
+          value={current}
+          onChange={this.onChange}
+          onBlur={this.close}
+        >
+          {samples.map((sample, i) => {
+            return <option key={i}>{sample}</option>
+          })}
+        </select>
+      )
     } else {
-      return <a href="" onClick={this.open}>{ current }</a>;
+      return (
+        <a href="" onClick={this.open}>
+          {current}
+        </a>
+      )
     }
   }
 }
 
-export default SampleSelector;
+export default SampleSelector
