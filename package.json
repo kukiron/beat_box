@@ -7,7 +7,7 @@
     "clear": "rm -rf ./build",
     "deploy": "npm run build && gh-pages -d build",
     "start": "react-scripts start",
-    "build": "npm run clear && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js, .jsx",
@@ -21,10 +21,7 @@
   "license": "ISC",
   "homepage": "https://beatbox-k.herokuapp.com",
   "greenkeeper": {
-    "ignore": [
-      "package-names",
-      "you-want-me-to-ignore"
-    ]
+    "ignore": ["package-names", "you-want-me-to-ignore"]
   },
   "dependencies": {
     "raven-js": "^3.17.0",
