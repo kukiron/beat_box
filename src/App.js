@@ -15,7 +15,8 @@ import "react-mdl/extra/material.js"
 class App extends Component {
   constructor(props) {
     super(props)
-    const hash = location.hash.substr(1)
+    const { location } = window,
+      hash = location.hash.substr(1)
 
     if (hash.length > 0) {
       try {
