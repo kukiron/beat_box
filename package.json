@@ -8,6 +8,7 @@
     "start": "nodemon --watch *.js --exec \"webpack-dev-server\"",
     "build": "npm run clear && webpack -p",
     "deploy": "npm run build && gh-pages -d build",
+    "heroku-prebuild": "npm install --only=dev",
     "precommit": "npm run lint",
     "test": "jest --verbose",
     "lint": "eslint . --ext .js, .jsx",
@@ -24,6 +25,7 @@
     "ignore": ["package-names", "you-want-me-to-ignore"]
   },
   "dependencies": {
+    "express": "^4.16.2",
     "raven-js": "^3.22.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
