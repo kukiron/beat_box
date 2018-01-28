@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "clear": "rm -rf ./build",
-    "start": "nodemon --watch *.js --exec \"webpack-dev-server\"",
+    "dev": "nodemon --watch *.js --exec \"webpack-dev-server\"",
+    "start": "node server.js",
     "build": "npm run clear && webpack -p",
     "deploy": "npm run build && gh-pages -d build",
     "heroku-prebuild": "npm install --only=dev",
