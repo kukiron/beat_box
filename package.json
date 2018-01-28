@@ -9,7 +9,6 @@
     "start": "node server.js",
     "build": "npm run clear && webpack -p",
     "deploy": "npm run build && gh-pages -d build",
-    "heroku-prebuild": "npm install --only=dev",
     "precommit": "npm run lint",
     "test": "jest --verbose",
     "lint": "eslint . --ext .js, .jsx",
