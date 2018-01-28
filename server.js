@@ -4,15 +4,15 @@ const express = require("express"),
   app = express()
 
 // Setup static assets
-app.use("/build", express.static(path.resolve(__dirname, "build")))
-app.use("/public", express.static(path.resolve(__dirname, "public")))
+app.use("/build", express.static(path.resolve(__dirname, "./build")))
+app.use(
+  "/public/favicon.ico",
+  express.static(path.resolve(__dirname, "./public/favicon.ico"))
+)
 
 // Serve main index.html
 app.get("*", noCache, (req, res) => {
-  res.sendFile(
-    "public/index.html",
-    path.resolve(__dirname, "public/index.html")
-  )
+  res.sendFile(path.resolve(__dirname, "./public/index.html"))
 })
 
 // Removing cache from the server

@@ -1,4 +1,4 @@
-import Tone from "tone"
+import { MultiPlayer, Sequence, Transport } from "tone"
 
 const velocities = [
   1,
@@ -25,7 +25,7 @@ const loopProcessor = (tracks, beatNotifier) => {
     {}
   )
 
-  const keys = new Tone.MultiPlayer({ urls }).toMaster()
+  const keys = new MultiPlayer({ urls }).toMaster()
 
   return (time, index) => {
     beatNotifier(index)
@@ -51,14 +51,14 @@ const loopProcessor = (tracks, beatNotifier) => {
 }
 
 export const create = (tracks, beatNotifier) => {
-  const loop = new Tone.Sequence(
+  const loop = new Sequence(
     loopProcessor(tracks, beatNotifier),
     new Array(16).fill(0).map((_, i) => i),
     "16n"
   )
 
-  Tone.Transport.bpm.value = 120
-  Tone.Transport.start()
+  Transport.bpm.value = 120
+  Transport.start()
 
   return loop
 }
@@ -68,4 +68,4 @@ export const update = (loop, tracks, beatNotifier) => {
   return loop
 }
 
-export const updateBPM = bpm => (Tone.Transport.bpm.value = bpm)
+export const updateBPM = bpm => (Transport.bpm.value = bpm)
