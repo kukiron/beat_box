@@ -1,3 +1,7 @@
+env:
+  global:
+    secure: llaoksw19+o94jhR2YBrbtPUa53FBLAhwxuv1hboIxAl+JrD3xNKuGpWbqKzGOTFaunoAy8stQt8VFh7+Kg7P6sVtx2Fx1TO3CEBDH7vNnyp44evZy5bI1yI6l1/GfCkrqWV783+qcCQ7Kx8528yNUsvtsGUwuMZJSZm+qQCPcNJjuJTaCFbW32C084RgeFHwLK5rT6xc2GMgs+xmosACC3gA66CizXVc5jKgJGwuz45LpMQ3FSg+aJWiqQmT9UKowNH9PLXzgkO5Z2xk2grEI8GynuvTBEjye84+g0ofK6a0aQlR/FGb6V2OSoQMC2HyDmuGXFVZjYNTflIeUot7hwvvXztsutEwb27TjXuIzyzxz+/ncKbNx8acdKMudq/Sut9DXyJGTXdtaBUz8+aDFlKTkViY/FGVyZUVa9WWfpmHqbI9IYw6Uum3TJWk/1y0lAyGvBoSGDTC/oYbAMd+haRcCOdh7Q0ufOYYnF+9URAOZxO5zyjxnCwEPuqmJohaQe7MX0lN3SVsRVTkfsF3X8YkkRMF0j8gLHaISKp0Ux74NOTbS05ZNKMK8erxJCNHCzzy4kSa2K5RFEfJGZgUj1Mpggvls19FlSe2bJegoqGvbyuo8jtLbQZaEXA02XXviDatuDfWS6pgvqoKG+TNd6whwbTGcKgFaGs+GhmszE=
+
 sudo: false
 
 language: node_js
@@ -11,12 +15,14 @@ node_js:
 
 cache:
   directories:
-    - node_modules
+  - node_modules
 
 before_install:
   - npm install -g npm@latest
-
+  - npm install -g greenkeeper-lockfile@1
 install:
   - npm install
 
+before_script: greenkeeper-lockfile-update
 script: npm run build
+after_script: greenkeeper-lockfile-upload

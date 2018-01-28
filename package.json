@@ -20,6 +20,9 @@
   "author": "Kafil Uddin Kiron",
   "license": "ISC",
   "homepage": "https://beatbox-k.herokuapp.com",
+  "greenkeeper": {
+    "ignore": ["package-names", "you-want-me-to-ignore"]
+  },
   "dependencies": {
     "raven-js": "^3.22.1",
     "react": "^16.2.0",
