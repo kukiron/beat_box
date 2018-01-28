@@ -4,7 +4,10 @@ const express = require("express"),
   app = express()
 
 // Setup static assets
-app.use("/build", express.static(path.resolve(__dirname, "./build")))
+app.use(
+  "/build/bundle.js",
+  express.static(path.resolve(__dirname, "./build/bundle.js"))
+)
 app.use(
   "/public/favicon.ico",
   express.static(path.resolve(__dirname, "./public/favicon.ico"))
