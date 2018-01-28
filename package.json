@@ -27,7 +27,7 @@
   },
   "author": "Kafil Uddin Kiron",
   "license": "ISC",
-  "homepage": "https://beatbox-k.herokuapp.com",
+  "homepage": "https://kukiron.github.io/beat_box/",
   "greenkeeper": {
     "ignore": ["package-names", "you-want-me-to-ignore"]
   },

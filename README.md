@@ -1,6 +1,4 @@
-# beat_box
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/kukiron/beat_box.svg)](https://greenkeeper.io/)
+# beat_box [![Greenkeeper badge](https://badges.greenkeeper.io/kukiron/beat_box.svg)](https://greenkeeper.io/)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/lh88wne2ajjork6k?svg=true)](https://ci.appveyor.com/project/kukiron/beat-box) [![CircleCI](https://circleci.com/gh/kukiron/beat_box.svg?style=svg)](https://circleci.com/gh/kukiron/beat_box) [![Build Status](https://travis-ci.org/kukiron/beat_box.svg?branch=master)](https://travis-ci.org/kukiron/beat_box) [![dependencies Status](https://david-dm.org/kukiron/beat_box/status.svg)](https://david-dm.org/kukiron/beat_box) [![devDependencies Status](https://david-dm.org/kukiron/beat_box/dev-status.svg)](https://david-dm.org/kukiron/beat_box?type=dev) [![Known Vulnerabilities](https://snyk.io/test/github/kukiron/beat_box/badge.svg)](https://snyk.io/test/github/kukiron/beat_box)
 
