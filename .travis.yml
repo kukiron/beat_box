@@ -1,9 +1,5 @@
 sudo: false
 
-env:
-  global:
-    secure: QQBu83i5COLcP3XD5a4tU+t7wvaBFOhakBcN/MeYWSP7qCD33GHD4ubYriDxRNmY9UfEUWmXFiitB6ERGrisGmQhj2cDg81/0bIPk/JBa778ngSGLfzQfEjJ3Y/4zGfuqfco5X9RJami2sYdPiQGe870eIJ6RSO6RWwoJkFnEuIBLeEyumIZO6VhTGt6O0c0kjaLdvvKFliVSeDIusIuifqGuZfFlGs6ZfYhlEx+16TXDtvQ0M1EkjHuVpb7AE1GMrHgqZfmCuv4dvyMsLSRhFvM/HqqOaaUo5m9ND2L+TJo6pCXPOsRNDq9Y9c6HxmhIg2CJ5VoFiGoWVxiYP6hfZu6IoomOF0KO1e4Uo+kJamKCV9KMHPuBACkDfs9dzsRRDJVuLIbDdgkg8NTKGkWKqYMyLFWxY49bjx/Z6smhtf5Vu1dze9ruZMAgzldDFLbQdRdbbGAylCsDNBXd1zehGvPhHMT702dmtFgnEL9EVMYWRhjreFxux6Mpt8puhAMoI9SDh9fJitgU3my0UvUtrH4aDk2XKmi+XjUBRcuze/ERNYdCajQUp4fOeffpKRHhMP9N3JLEZ2s2V1YGFZdtdkNX7WAvRhdYWWGq6ToZEz2CkRIzN601V1HFD3tJOIjpZaI58ygihEgqXaXeemEwpjSU87lQEMpHZFHchhcVIs=
-
 language: node_js
 
 notifications:
@@ -17,11 +13,9 @@ cache:
   - node_modules
 
 before_install:
-  - "[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest"
-  - npm install -g greenkeeper-lockfile@1
-install:
+  - npm install -g npm@latest
+
+  install:
   - npm install
 
-before_script: greenkeeper-lockfile-update
 script: npm run build
-after_script: greenkeeper-lockfile-upload

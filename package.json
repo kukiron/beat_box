@@ -21,14 +21,17 @@
   "license": "ISC",
   "homepage": "https://beatbox-k.herokuapp.com",
   "greenkeeper": {
-    "ignore": ["package-names", "you-want-me-to-ignore"]
+    "ignore": [
+      "package-names",
+      "you-want-me-to-ignore"
+    ]
   },
   "dependencies": {
-    "raven-js": "^3.17.0",
+    "raven-js": "^3.22.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-mdl": "^1.7.2",
-    "tone": "^0.11.11"
+    "react-mdl": "^1.11.0",
+    "tone": "^0.12.55"
   },
   "devDependencies": {
     "eslint-config-latest": "^1.0.6",
