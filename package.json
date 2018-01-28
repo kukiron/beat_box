@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "clear": "rm -rf ./build",
+    "start": "nodemon --watch *.js --exec \"webpack-dev-server\"",
+    "build": "npm run clear && webpack -p",
     "deploy": "npm run build && gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --coverage",
-    "eject": "react-scripts eject",
+    "precommit": "npm run lint",
+    "test": "jest --verbose",
     "lint": "eslint . --ext .js, .jsx",
     "lint:fix": "eslint --fix . --ext .js, .jsx"
   },
@@ -20,22 +20,28 @@
   "author": "Kafil Uddin Kiron",
   "license": "ISC",
   "homepage": "https://beatbox-k.herokuapp.com",
-  "greenkeeper": {
-    "ignore": [
-      "package-names",
-      "you-want-me-to-ignore"
-    ]
-  },
   "dependencies": {
     "raven-js": "^3.22.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-mdl": "^1.11.0",
-    "tone": "^0.12.55"
+    "tone": "^0.11.11"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.1.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "css-loader": "^0.28.9",
     "eslint-config-latest": "^1.0.6",
     "gh-pages": "^1.1.0",
-    "react-scripts": "1.1.0"
+    "husky": "^0.14.3",
+    "jest": "^22.1.4",
+    "nodemon": "^1.14.11",
+    "style-loader": "^0.20.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
   }
 }
