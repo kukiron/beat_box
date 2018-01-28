@@ -21,6 +21,10 @@
     "type": "git",
     "url": "git+https://github.com/kukiron/beat_box.git"
   },
+  "engines": {
+    "node": "9.3.0",
+    "npm": "5.6.0"
+  },
   "author": "Kafil Uddin Kiron",
   "license": "ISC",
   "homepage": "https://beatbox-k.herokuapp.com",
