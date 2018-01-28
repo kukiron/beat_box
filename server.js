@@ -3,10 +3,24 @@ const express = require("express"),
   port = process.env.PORT || 8080,
   app = express()
 
-app.use(express.static(__dirname))
+// Setup static assets
+app.use("/build", express.static(path.resolve(__dirname, "build")))
+app.use("/public", express.static(path.resolve(__dirname, "public")))
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "index.html"))
+// Serve main index.html
+app.get("*", noCache, (req, res) => {
+  res.sendFile(
+    "public/index.html",
+    path.resolve(__dirname, "public/index.html")
+  )
 })
 
-app.listen(port, () => console.log(`Server started on ${port}`))
+// Removing cache from the server
+function noCache(req, res, next) {
+  res.header("Cache-Control", "private, no-cache, no-store, must-revalidate")
+  res.header("Expires", "-1")
+  res.header("Pragma", "no-cahce")
+  next()
+}
+
+app.listen(port, () => console.log(`Server listening to port: ${port}`))
