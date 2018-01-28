@@ -6,16 +6,17 @@ notifications:
   email: false
 
 node_js:
-  - 8.4.0
+  - "6"
+  - "8"
 
 cache:
   directories:
-  - node_modules
+    - node_modules
 
 before_install:
   - npm install -g npm@latest
 
-  install:
+install:
   - npm install
 
-script: npm run build
+script: npm run test
