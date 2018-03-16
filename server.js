@@ -1,21 +1,15 @@
-const express = require("express"),
-  path = require("path"),
-  port = process.env.PORT || 8080,
-  app = express()
+const express = require("express")
+const path = require("path")
+
+const app = express()
+const port = process.env.PORT || 8080
 
 // Setup static assets
-app.use(
-  "/build/bundle.js",
-  express.static(path.resolve(__dirname, "/build/bundle.js"))
-)
-app.use(
-  "/public/favicon.ico",
-  express.static(path.resolve(__dirname, "/public/favicon.ico"))
-)
+app.use(express.static(path.resolve(__dirname, "public")))
 
 // Serve main index.html
 app.get("*", noCache, (req, res) => {
-  res.sendFile(path.resolve(__dirname, "/public/index.html"))
+  res.sendFile(path.resolve(__dirname, "public/index.html"))
 })
 
 // Removing cache from the server
@@ -26,4 +20,7 @@ function noCache(req, res, next) {
   next()
 }
 
-app.listen(port, () => console.log(`Server listening to port: ${port}`))
+// Listening to the port
+app.listen(port, () => {
+  console.log(`🌍 Express server is up and running on port: ${port} 🐎`)
+})
