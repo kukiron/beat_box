@@ -8,6 +8,7 @@
     "start": "node server.js",
     "dev:client": "nodemon --exec \"webpack-dev-server --mode development\"",
     "build": "npm run clear && webpack --mode production",
+    "deploy": "gh-pages -d public",
     "heroku-prebuild": "npm install --only=dev",
     "lint": "eslint . --ext .js, .jsx",
     "lint:fix": "eslint --fix . --ext .js, .jsx"
@@ -38,6 +39,7 @@
     "css-loader": "^0.28.10",
     "eslint-config-latest": "^1.0.6",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "gh-pages": "^1.1.0",
     "nodemon": "^1.17.2",
     "style-loader": "^0.20.3",
     "webpack": "^4.1.1",

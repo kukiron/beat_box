@@ -9,7 +9,7 @@ app.use(express.static(path.resolve(__dirname, "public")))
 
 // Serve main index.html
 app.get("/", noCache, (req, res) => {
-  res.sendFile(path.resolve(__dirname, "index.html"))
+  res.sendFile(path.resolve(__dirname, "public/index.html"))
 })
 
 // Removing cache from the server
