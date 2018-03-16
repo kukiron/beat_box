@@ -1,4 +1,4 @@
-node_modules
-build
+node_modules/
+dist/
+bundle.js
 npm-debug.log
-dist
