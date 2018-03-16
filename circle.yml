@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 8.4.0
+    version: 9.5.0
 
 workflows:
   version: 2
@@ -14,3 +14,8 @@ workflows:
       - test:
           override:
             - "true"
+
+general:
+  branches:
+    ignore:
+      - gh-pages
