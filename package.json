@@ -29,7 +29,10 @@
   "license": "ISC",
   "homepage": "https://kukiron.github.io/beat_box/",
   "greenkeeper": {
-    "ignore": ["package-names", "you-want-me-to-ignore"]
+    "ignore": [
+      "package-names",
+      "you-want-me-to-ignore"
+    ]
   },
   "dependencies": {
     "express": "^4.16.2",
@@ -54,6 +57,7 @@
     "nodemon": "^1.14.11",
     "style-loader": "^0.20.1",
     "webpack": "^4.0.0",
+    "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.0.0"
   }
 }
