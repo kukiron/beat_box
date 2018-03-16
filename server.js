@@ -5,7 +5,7 @@ const app = express()
 const port = process.env.PORT || 8080
 
 // Setup static assets
-app.use(express.static(path.resolve(__dirname, "public")))
+app.use(express.static("public"))
 
 // Serve main index.html
 app.get("*", noCache, (req, res) => {
