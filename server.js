@@ -8,7 +8,7 @@ const port = process.env.PORT || 8080
 app.use(express.static("public"))
 
 // Serve main index.html
-app.get("*", noCache, (req, res) => {
+app.get("/", noCache, (req, res) => {
   res.sendFile(path.resolve(__dirname, "public/index.html"))
 })
 
