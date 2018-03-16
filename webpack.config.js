@@ -5,6 +5,7 @@ module.exports = {
   entry: path.resolve(__dirname, "src/index.js"),
   output: {
     path: path.resolve(__dirname, "public"),
+    publicPath: "public",
     filename: "bundle.js"
   },
   resolve: {
@@ -28,7 +29,7 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: "public/",
+    contentBase: "./",
     stats: "errors-only",
     overlay: {
       errors: true,
