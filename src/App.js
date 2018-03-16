@@ -7,10 +7,10 @@ import Controls from "./components/Controls"
 
 import * as sequencer from "./lib/sequencer"
 import * as model from "./lib/model"
+import "react-mdl/extra/material"
 
-import "./App.css"
 import "react-mdl/extra/css/material.light_blue-pink.min.css"
-import "react-mdl/extra/material.js"
+import "./App.css"
 
 class App extends Component {
   constructor(props) {
