@@ -5,11 +5,11 @@ const app = express()
 const port = process.env.PORT || 8080
 
 // Setup static assets
-app.use(express.static("public"))
+app.use(express.static(path.resolve(__dirname, "public")))
 
 // Serve main index.html
 app.get("/", noCache, (req, res) => {
-  res.sendFile(path.resolve(__dirname, "public/index.html"))
+  res.sendFile(path.resolve(__dirname, "index.html"))
 })
 
 // Removing cache from the server
